@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const FormData = require('form-data');
 const sha1 = require('sha1');
 
-const token = '8704e7a73a6d8c544622129c65c7e2958aa6cc69';
+const token = '';
 
 async function getJSON() {
     const response = await fetch(`https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=${token}`);
