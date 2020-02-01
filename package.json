@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx prettier --config .prettierrc.js --write '**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Thiago92Rodrigues/aceleradev-nodejs/issues"
   },
-  "homepage": "https://github.com/Thiago92Rodrigues/aceleradev-nodejs#readme"
+  "homepage": "https://github.com/Thiago92Rodrigues/aceleradev-nodejs#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "csv-parser": "^2.3.2"
+  }
 }
