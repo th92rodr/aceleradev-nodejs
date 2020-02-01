@@ -34,27 +34,26 @@ Output:
 */
 
 const people = [
-    {
-        "name": "Melissa",
-        "language": ["Python", "Haskell"]
-    },
-    {
-        "name": "Carolina",
-        "language": ["Python", "Javascript"]
-    },
-    {
-        "name": "Armando",
-        "language": ["Javascript", "Haskell"]
-    }
+  {
+    name: 'Melissa',
+    language: ['Python', 'Haskell']
+  },
+  {
+    name: 'Carolina',
+    language: ['Python', 'Javascript']
+  },
+  {
+    name: 'Armando',
+    language: ['Javascript', 'Haskell']
+  }
 ];
 
 const obj = people.reduce((acumulator, current) => {
-    current.language.forEach((language) => {
-        if (!acumulator[language])
-            acumulator[language] = []
-        acumulator[language].push(current.name)
-    });
-    return acumulator;
+  current.language.forEach((language) => {
+    if (!acumulator[language]) acumulator[language] = [];
+    acumulator[language].push(current.name);
+  });
+  return acumulator;
 }, {});
 
 console.log(obj);
