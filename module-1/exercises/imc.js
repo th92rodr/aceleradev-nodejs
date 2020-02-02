@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+  Desenvolva um programa que leia o peso (em kg) e altura (em metros) e em seguida calcule o IMC e mostre qual a situação do adulto de acordo com a tabela.
+  Conhecimentos utilizados: Estrutura de decisão, operadores aritméticos, operadores de comparação, operadores lógicos e funções.
+*/
+
 function imc(weigth, height) {
   const value = weigth / (height * height);
 
@@ -19,4 +24,4 @@ function imc(weigth, height) {
 //console.log(imc(70, 1.75));
 //console.log(imc(90, 1.65));
 
-module.exports = imc;
+module.exports = { imc };
