@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "npx prettier --config .prettierrc.js --write '**/*.js'"
+    "test": "npx jest",
+    "format": "npx prettier --config .prettierrc.js --write '**/*.+(js|css)'"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,13 @@
   },
   "homepage": "https://github.com/Thiago92Rodrigues/aceleradev-nodejs#readme",
   "devDependencies": {
+    "jest": "^25.1.0",
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "csv-parser": "^2.3.2"
+    "body-parser": "^1.19.0",
+    "csv-parser": "^2.3.2",
+    "express": "^4.17.1",
+    "supertest": "^4.0.2"
   }
 }
