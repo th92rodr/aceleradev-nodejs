@@ -1,4 +1,4 @@
-const odd_or_even = require('./odd-or-even');
+const { odd_or_even } = require('./odd-or-even');
 
 describe('the function odd_or_even should...', () => {
   test('return an object with a list of all the odd numbers from 0 to 10', () => {
