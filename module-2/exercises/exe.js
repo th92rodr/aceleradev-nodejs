@@ -1,5 +1,5 @@
 /*
-Agrupe as pessoas de acordo com as suas linguagens.
+  Agrupe as pessoas de acordo com as suas linguagens.
 
 Input:
  {
@@ -31,7 +31,20 @@ Output:
      "Armando"
    ]
  }
+
 */
+
+function group_people_by_language(people) {
+  const obj = people.reduce((acumulator, current) => {
+    current.language.forEach((language) => {
+      if (!acumulator[language]) acumulator[language] = [];
+      acumulator[language].push(current.name);
+    });
+    return acumulator;
+  }, {});
+
+  return obj;
+}
 
 const people = [
   {
@@ -48,12 +61,6 @@ const people = [
   }
 ];
 
-const obj = people.reduce((acumulator, current) => {
-  current.language.forEach((language) => {
-    if (!acumulator[language]) acumulator[language] = [];
-    acumulator[language].push(current.name);
-  });
-  return acumulator;
-}, {});
+console.log(group_people_by_language(people));
 
-console.log(obj);
+module.exports = { group_people_by_language };
