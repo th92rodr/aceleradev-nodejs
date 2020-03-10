@@ -1,26 +1,22 @@
-const {
-  queryHelper,
-  insertFormatter,
-  connection
-} = require('../db/helper')
+const { queryHelper, insertFormatter, connection } = require('../db/helper');
 
 const populateTable = async (table, data) => {
-  const { columns, values } = insertFormatter(data)
-  const query = `INSERT INTO ${table} (${columns}) VALUES (${values});`
+  const { columns, values } = insertFormatter(data);
+  const query = `INSERT INTO ${table} (${columns}) VALUES (${values});`;
 
-  const response = await queryHelper(query)
+  const response = await queryHelper(query);
 
-  return response
-}
+  return response;
+};
 
 const cleanTable = async (table) => {
-  const response = await queryHelper(`TRUNCATE TABLE ${table}`)
+  const response = await queryHelper(`TRUNCATE TABLE ${table}`);
 
-  return response
-}
+  return response;
+};
 
 module.exports = {
   connection,
   populateTable,
   cleanTable
-}
+};

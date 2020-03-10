@@ -12,6 +12,7 @@ Neste desafio você aprenderá:
 - Testar APIs
 
 ## Requisitos
+
 ​
 Para este desafio você precisará de:
 
@@ -46,7 +47,7 @@ Você deve implementar a solução no arquivo `/src/controllers/index.js`, onde 
 
 **Observação:**
 
-Para submeter o desafio, o banco de dados definido pelo arquivo docker-compose.yml deve estar rodando (docker-compose up -d). 
+Para submeter o desafio, o banco de dados definido pelo arquivo docker-compose.yml deve estar rodando (docker-compose up -d).
 
 Um excelente desafio para você! 🔥🔥🔥
 
@@ -61,20 +62,21 @@ Retorna a lista de estudantes cadastrados.
 Resposta:
 
 StatusCode: 200
+
 ```json
 {
-  total: 1,
-  data: [
+  "total": 1,
+  "data": [
     {
-      id: Number,
-      name: String,
-      surname: String,
-      email: String,
-      age: Number,
-      gender: String,
-      class: String,
-      isEmployed: Boolean,
-      city: String
+      "id": Number,
+      "name": String,
+      "surname": String,
+      "email": String,
+      "age": Number,
+      "gender": String,
+      "class": String,
+      "isEmployed": Boolean,
+      "city": String
     }
   ]
 }
@@ -89,17 +91,18 @@ Retorna o estudante cadastro para o parâmetro referido (studentId)
 Resposta:
 
 StatusCode: 200
+
 ```json
 {
-  id: Number,
-  name: String,
-  surname: String,
-  email: String,
-  age: Number,
-  gender: String,
-  class: String,
-  isEmployed: Boolean,
-  city: String
+  "id": Number,
+  "name": String,
+  "surname": String,
+  "email": String,
+  "age": Number,
+  "gender": String,
+  "class": String,
+  "isEmployed": Boolean,
+  "city": String
 }
 ```
 
@@ -110,24 +113,26 @@ Método: POST
 Cria um novo cadastro de estudante (todos os campos são obrigatórios).
 
 Corpo aceito:
+
 ```json
 {
-  name: String,
-  surname: String,
-  email: String,
-  age: Number,
-  gender: String,
-  class: String,
-  isEmployed: Boolean,
-  city: String
+  "name": String,
+  "surname": String,
+  "email": String,
+  "age": Number,
+  "gender": String,
+  "class": String,
+  "isEmployed": Boolean,
+  "city": String
 }
 ```
 
 Resposta:
 StatusCode: 201
+
 ```json
 {
-  success: 'A new record has been created.'
+  "success": "A new record has been created."
 }
 ```
 
@@ -138,7 +143,8 @@ Método: PATCH
 Atualiza os dados de cadastro do estudante referido no parâmetro `studentId`. Os campos a serem atualizados são opcionais, com exceção do campo `id`, claro.
 
 Corpo aceito:
-```json
+
+````json
 {
   name: String,
   surname: String,
@@ -156,7 +162,7 @@ StatusCode: 200
 {
   success: 'The record has been updated.'
 }
-```
+````
 
 ### /v1/students/:studentId
 
