@@ -35,29 +35,23 @@ describe('The API on /api/animals Endpoint at GET method should...', () => {
 
   afterAll(() => cleanDB());
 
-  test(`return 200 as status code and have 'total' and 'data' as properties`, async () => {
+  test('return 200 as status code and have "total" and "data" as properties', async () => {
     expect.assertions(2);
-
     const res = await request(server.app).get('/api/animals');
-
     expect(res.statusCode).toEqual(200);
     expect(Object.keys(res.body)).toMatchObject(['total', 'data']);
   });
 
   test('return the right number of items and an object with all items', async () => {
     expect.assertions(2);
-
     const res = await request(server.app).get('/api/animals');
-
     expect(res.body.total).toEqual(2);
     expect(typeof res.body.data).toBe('object');
   });
 
-  test(`return the 'data' property with all items from DB`, async () => {
+  test('return the "data" property with all items from DB', async () => {
     expect.assertions(1);
-
     const res = await request(server.app).get('/api/animals');
-
     expect(res.body).toMatchObject({
       total: 2,
       data: {
@@ -107,7 +101,7 @@ describe('The API on /api/animals/:id Endpoint at GET method should...', () => {
 
   afterAll(() => cleanDB());
 
-  test(`return 200 as status code and the item founded`, async () => {
+  test('return 200 as status code and the item founded', async () => {
     expect.assertions(2);
     const res = await request(server.app).get(
       '/api/animals/ANI1580214599567RD121'
@@ -127,13 +121,13 @@ describe('The API on /api/animals/:id Endpoint at GET method should...', () => {
     });
   });
 
-  test(`return 404 as status code and error message if the item doesn't exists and couldn't be found`, async () => {
+  test("return 404 as status code and error message if the item doesn't exists and couldn't be found", async () => {
     expect.assertions(2);
     const res = await request(server.app).get('/api/animals/invalid');
 
     expect(res.statusCode).toEqual(404);
     expect(res.body).toMatchObject({
-      error: `The record invalid couldn't be found.`
+      error: "The record invalid couldn't be found."
     });
   });
 });
@@ -141,7 +135,7 @@ describe('The API on /api/animals/:id Endpoint at GET method should...', () => {
 describe('The API on /api/animals Endpoint at POST method should...', () => {
   afterEach(() => cleanDB());
 
-  test(`return 201 as status code and return the item added`, async () => {
+  test('return 201 as status code and return the item added', async () => {
     expect.assertions(2);
     const res = await request(server.app)
       .post('/api/animals')
@@ -167,10 +161,9 @@ describe('The API on /api/animals Endpoint at POST method should...', () => {
     });
   });
 
-  test(`save on database the new item added`, async () => {
+  test('save on database the new item added', async () => {
     expect.assertions(1);
-
-    const res = await request(server.app)
+    await request(server.app)
       .post('/api/animals')
       .send({
         pet_name: 'Belchior Fernandes Montalvão',
@@ -217,9 +210,8 @@ describe('The API on /api/animals/:id Endpoint at PATCH method should...', () =>
   );
   afterEach(() => cleanDB());
 
-  test(`return 200 as status code and return the item changed`, async () => {
+  test('return 200 as status code and return the item changed', async () => {
     expect.assertions(2);
-
     const res = await request(server.app)
       .patch('/api/animals/ANI1580214599567RD121')
       .send({
@@ -239,9 +231,8 @@ describe('The API on /api/animals/:id Endpoint at PATCH method should...', () =>
     });
   });
 
-  test(`return 404 as status code and error message if the item doesn't exists and couldn't be updated`, async () => {
+  test("return 404 as status code and error message if the item doesn't exists and couldn't be updated", async () => {
     expect.assertions(2);
-
     const res = await request(server.app)
       .patch('/api/animals/DOESNTEXISTS')
       .send({
@@ -251,14 +242,13 @@ describe('The API on /api/animals/:id Endpoint at PATCH method should...', () =>
 
     expect(res.statusCode).toEqual(404);
     expect(res.body).toMatchObject({
-      error: `The record DOESNTEXISTS couldn't be found.`
+      error: "The record DOESNTEXISTS couldn't be found."
     });
   });
 
-  test(`save on database the item changed`, async () => {
+  test('save on database the item changed', async () => {
     expect.assertions(1);
-
-    const res = await request(server.app)
+    await request(server.app)
       .patch('/api/animals/ANI1580214599567RD121')
       .send({
         sex: 'Femea',
@@ -298,9 +288,8 @@ describe('The API on /api/animals/:id Endpoint at DELETE method should...', () =
   );
   afterEach(() => cleanDB());
 
-  test(`return 204 as status code to a item deleted successfully`, async () => {
+  test('return 204 as status code to a item deleted successfully', async () => {
     expect.assertions(1);
-
     const res = await request(server.app).delete(
       '/api/animals/ANI1580214599567RD121'
     );
@@ -308,9 +297,8 @@ describe('The API on /api/animals/:id Endpoint at DELETE method should...', () =
     expect(res.statusCode).toEqual(204);
   });
 
-  test(`return 404 as status code and error message if the item doesn't exists and couldn't be deleted`, async () => {
+  test("return 404 as status code and error message if the item doesn't exists and couldn't be deleted", async () => {
     expect.assertions(2);
-
     const res = await request(server.app).delete('/api/animals/DOESNTEXISTS');
 
     expect(res.statusCode).toEqual(404);
@@ -319,12 +307,9 @@ describe('The API on /api/animals/:id Endpoint at DELETE method should...', () =
     });
   });
 
-  test(`remove from database the item that should be deleted`, async () => {
+  test('remove from database the item that should be deleted', async () => {
     expect.assertions(1);
-
-    const res = await request(server.app).delete(
-      '/api/animals/ANI1580214599567RD121'
-    );
+    await request(server.app).delete('/api/animals/ANI1580214599567RD121');
 
     const database = openDB();
     const record = database['ANI1580214599567RD121'];
