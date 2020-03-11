@@ -18,17 +18,14 @@ const updateDB = (data) => {
 };
 
 const animals = {
-  // Retorna todos os animais na base
   findAll: () => Promise.resolve(openDB()),
 
-  // Retorna o animal indicado pela chave
   findById: (id) =>
     new Promise((resolve) => {
       const db = openDB();
       return resolve(db[id]);
     }),
 
-  // Cria um novo registro na base
   create: (data) =>
     new Promise((resolve) => {
       const db = openDB();
@@ -45,7 +42,6 @@ const animals = {
       return resolve(db[id]);
     }),
 
-  // Atualiza um registro da base, baseado em um id /chave
   update: (data, id) =>
     new Promise((resolve) => {
       const db = openDB();
@@ -59,7 +55,6 @@ const animals = {
       return resolve(db[id]);
     }),
 
-  // Remove um registro da base, baseado em um id / chave
   destroy: (id) =>
     new Promise((resolve) => {
       const db = openDB();
