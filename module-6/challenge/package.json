@@ -1,7 +1,8 @@
 {
-  "name": "nodejs-0",
+  "name": "module-6",
   "version": "1.0.0",
-  "description": "",
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
   "main": "src/index.js",
   "scripts": {
     "test": "jest test/index.test.js",
@@ -13,8 +14,6 @@
       "/node_modules/"
     ]
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
