@@ -1,11 +1,12 @@
 {
-  "name": "nodejs-0",
+  "name": "module-4",
   "version": "1.0.0",
-  "description": "",
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
   "main": "src/index.js",
   "scripts": {
-    "test": "npx jest test/server.test.js",
-    "test:coverage": "npx jest test/server.test.js --coverage"
+    "test": "jest test/server.test.js",
+    "test:coverage": "jest test/server.test.js --coverage"
   },
   "jest": {
     "testEnvironment": "node",
@@ -13,8 +14,6 @@
       "/node_modules/"
     ]
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "jest": "^24.9.0",
     "supertest": "^4.0.2"

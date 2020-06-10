@@ -1,23 +1,17 @@
 {
   "name": "aceleradev-nodejs",
   "version": "1.0.0",
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
   "description": "Codenation - AceleraDev Node.js",
-  "main": "",
   "scripts": {
-    "test": "npx jest",
-    "format": "npx prettier --config .prettierrc.js --write '**/*.+(js|css|html)'"
+    "test": "jest",
+    "format": "prettier --config .prettierrc.js --write '**/*.+(js|css|html)'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Thiago92Rodrigues/aceleradev-nodejs.git"
+    "url": "git+https://github.com/th92rodr/aceleradev-nodejs.git"
   },
-  "keywords": [],
-  "author": "Thiago Rodrigues",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Thiago92Rodrigues/aceleradev-nodejs/issues"
-  },
-  "homepage": "https://github.com/Thiago92Rodrigues/aceleradev-nodejs#readme",
   "devDependencies": {
     "jest": "^25.1.0",
     "prettier": "^1.19.1"
