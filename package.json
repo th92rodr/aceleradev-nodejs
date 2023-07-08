@@ -22,7 +22,7 @@
     "express": "^4.17.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
-    "sequelize": "^5.21.4",
+    "sequelize": "^5.22.5",
     "supertest": "^4.0.2"
   }
 }
