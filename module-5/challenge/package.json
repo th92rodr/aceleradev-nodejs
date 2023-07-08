@@ -15,5 +15,8 @@
     "jest-junit": "^10.0.0",
     "mysql": "^2.18.1",
     "supertest": "^4.0.2"
+  },
+  "engines": {
+    "node": "v14.21.3"
   }
 }

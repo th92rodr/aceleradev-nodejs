@@ -13,5 +13,8 @@
     "chai": "^4.2.0",
     "mocha": "^10.2.0",
     "mocha-junit-reporter": "^1.18.0"
+  },
+  "engines": {
+    "node": "v12.22.12"
   }
 }

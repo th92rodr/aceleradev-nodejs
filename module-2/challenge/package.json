@@ -17,5 +17,8 @@
   },
   "dependencies": {
     "csv-parser": "^2.3.2"
+  },
+  "engines": {
+    "node": "v12.22.12"
   }
 }

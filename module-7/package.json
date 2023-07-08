@@ -24,7 +24,10 @@
     "mariadb": "^2.1.4",
     "mysql2": "^2.1.0",
     "path": "^0.12.7",
-    "sequelize": "^6.29.0",
+    "sequelize": "^5.22.3",
     "jest-junit": "^10.0.0"
+  },
+  "engines": {
+    "node": "v14.21.3"
   }
 }
